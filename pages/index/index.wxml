@@ -1,0 +1,54 @@
+<view class="page">
+  <view>
+    查看历史 
+    <label></label>
+  </view>
+  <view class="page__hd">
+      <view class="page__title green"> 今日花费</view>
+  </view>
+  <view class="pg_bd page__bd_spacing">
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{showTopTips}}</view>
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{notANumber}}">{{notANumber}}</view>
+    <view class="page__title">
+      <text wx:if="{{day}}">{{day}}</text>
+    </view>
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">今日预算</view>
+         </view>
+        <view class="weui-cell__bd">
+          <label>{{budget}} </label> 
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">今日花费</view>
+         </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入今日花费" bindinput='updateExpense'/>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell ">
+        <view class="weui-cell__hd">
+          <view class="weui-label">今日结余</view>
+         </view>
+        <view class="weui-cell__bd">
+          <label wx:if="{{balance}}">{{balance}}</label>
+        </view>
+      </view>
+    </view>
+    <view></view>
+    <view class='button-sp-area'>
+      <button class="weui-btn" type="primary" plain="true" bindtap='computeBalance'>计算结余</button>
+    </view>
+    <view>
+      本月花销：100
+    </view>
+    <view>本月结余: 200</view>
+  </view>
+</view>
